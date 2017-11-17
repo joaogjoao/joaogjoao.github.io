@@ -893,8 +893,11 @@
 
 		ball.body.velocity.setTo(0, 0);
 
-		introText.text = 'GAME OVER!\nR pra Reiniciar';
+		introText.text = 'GAME OVER!\nAperta aqui pra Reiniciar';
 		introText.visible = true;
+		introText.inputEnabled = true;
+		introText.events.onInputDown.add(resta(), this);
+		
 		gameOvers = true
 
 	}
