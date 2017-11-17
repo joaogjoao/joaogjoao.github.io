@@ -299,7 +299,8 @@
 
 			ninja.removeAll()
 			bonus.removeAll()
-			shurikens.removeAll()
+		//	if
+			//shurikens.removeAll()
 			if(bn > 0){bullets.removeAll()}
 			bulArt.removeAll()
 			vidas.removeAll()
@@ -577,7 +578,22 @@
 				.start()
 		}
 	}
+	function listener () {
+		
+		gameOvers = false
+		ballVelocity = -330
+		brickValue = 30
+		ninjaValue = 50
+		coinValue = 100
+		goodRate = 60
+		badRate = 80
+		vidasRate = 70
+		LEVEL = 1
 
+
+		create()
+		
+		}
 
 	function resta() {
 		if (rest.isDown) {
@@ -893,11 +909,11 @@
 
 		ball.body.velocity.setTo(0, 0);
 
-		introText.text = 'GAME OVER!\nAperta aqui pra Reiniciar';
+		introText.text = 'GAME OVER!\nClique aqui pra Reiniciar';
 		introText.visible = true;
 		introText.inputEnabled = true;
-		introText.events.onInputDown.add(resta(), this);
-		
+		introText.events.onInputDown.add(listener, this);
+
 		gameOvers = true
 
 	}
