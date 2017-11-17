@@ -89,6 +89,7 @@
 		game.load.image('shot', 'assets/shot.png')
 		game.load.image('vida', 'assets/vida.png')
 		game.load.image('health', 'assets/health.png')
+		game.load.image('tiro', 'assets/tiro.png')
 		game.load.image('ninjaMorto', 'assets/ninjaAmarelo.png')
 		game.load.spritesheet('ball', 'assets/ball.png', 16, 16)
 		game.load.spritesheet('bricks', 'assets/bricks.png', 38, 19)
@@ -641,6 +642,12 @@
 		}
 	}
 	var baseTiros
+	function createFireButton(){
+		tiroButton
+		introText.inputEnabled = true;
+		introText.events.onInputDown.add(listener, this);
+
+	}
 
 	function createBulArt() {
 		bulArt.removeAll()
